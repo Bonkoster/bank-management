@@ -20,12 +20,10 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    private final UserAccountService userAccountService;
     private final ModelMapper mapper;
 
-    public UserService(UserRepository userRepository, UserAccountService userAccountService, ModelMapper mapper) {
+    public UserService(UserRepository userRepository, ModelMapper mapper) {
         this.userRepository = userRepository;
-        this.userAccountService = userAccountService;
         this.mapper = mapper;
     }
 
@@ -48,6 +46,14 @@ public class UserService {
                 .stream()
                 .map(user -> mapper.map(user, GetUserResponse.class))
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public double totalBalance(long userId) {
+        var user = userRepository.findById(userId).orElseThrow(NullPointerException::new);
+        return user.getAccounts().stream()
+                .mapToDouble(UserAccount::getFunds)
+                .sum();
     }
 
     @Transactional

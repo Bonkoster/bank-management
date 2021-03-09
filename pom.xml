@@ -12,7 +12,7 @@
     <artifactId>bank-management</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bank-management</name>
-    <description>Test task realization for Amper Capital</description>
+    <description>Test task realization for Ammer Capital</description>
     <properties>
         <java.version>11</java.version>
         <springfox.version>3.0.0</springfox.version>

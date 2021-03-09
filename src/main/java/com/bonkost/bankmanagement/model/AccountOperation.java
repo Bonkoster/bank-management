@@ -21,11 +21,11 @@ public final class AccountOperation {
     @Column(name = "id", nullable = false, unique = true)
     private long id;
 
-    @Column(name = "fund_sum", nullable = false)
-    private double fundSum;
+    @Column(name = "funds_amount", nullable = false)
+    private double fundsAmount;
 
     @Column(name = "type", nullable = false)
-    private int operationType;
+    private int type;
 
     @Column(name = "created_at", nullable = false)
     private Date createdAt;

@@ -24,9 +24,6 @@ public final class User {
     @Column(name = "name", length = 100, nullable = false, unique = true)
     private String name;
 
-    @Column(name = "email", length = 50, nullable = false, unique = true)
-    private String email;
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserAccount> accounts;
 }

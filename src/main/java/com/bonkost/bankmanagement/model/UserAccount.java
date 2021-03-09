@@ -21,8 +21,8 @@ public final class UserAccount {
     @Column(name = "id", nullable = false, unique = true)
     private long id;
 
-    @Column(name = "fund", nullable = false)
-    private double fund;
+    @Column(name = "funds", nullable = false)
+    private double funds;
 
     @ManyToOne
     private User user;

@@ -1,0 +1,2 @@
+- Swagger address -> http://localhost:8080/swagger-ui/
+- Please, don't forget to build jar file :)
